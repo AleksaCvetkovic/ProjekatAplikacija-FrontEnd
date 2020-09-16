@@ -1,16 +1,34 @@
 import React from "react";
 import { Container, Nav } from "react-bootstrap";
+export class MainManuItem{
+    text: string = '';
+    link: string = '#';
 
-export class MainManu extends React.Component{
+    constructor(text: string, link: string){
+        this.link = link;
+        this.text = text;
+    }
+}
+
+interface MainManuPropertis {
+    items: MainManuItem[];
+}
+
+export class MainManu extends React.Component<MainManuPropertis>{
     render() {
         return (
             <Container>
             <Nav variant="tabs">
-                <Nav.Link href = "/">Home</Nav.Link>
-                <Nav.Link href = "/contact">Contact</Nav.Link>
-                <Nav.Link href = "/login">log in</Nav.Link>
+                { this.props.items.map(this.makeNavLink)}
             </Nav>
             </Container>
+        );
+    }
+    private makeNavLink(item: MainManuItem){
+        return (
+            <Nav.Link href ={ item.link }>
+                { item.text }
+                </Nav.Link>
         );
     }
 }

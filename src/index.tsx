@@ -8,11 +8,17 @@ import 'jquery/dist/jquery.js';
 import 'popper.js/dist/popper.js';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import '@fortawesome/fontawesome-free/css/fontawesome.min.css';
-import { MainManu } from './components/mainManu/mainManu';
+import { MainManu, MainManuItem } from './components/mainManu/mainManu';
+
+const manuItems = [
+  new MainManuItem('Home', '/'),
+  new MainManuItem('Contact', '/contact/'),
+  new MainManuItem('Log In', '/user/logIn/'),
+]
 
 ReactDOM.render(
   <React.StrictMode>
-    <MainManu></MainManu>
+    <MainManu items={manuItems}></MainManu>
     <App />
   </React.StrictMode>,
   document.getElementById('root')
