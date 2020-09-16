@@ -7,7 +7,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 function App() {
   return (
     <Container>
-      <FontAwesomeIcon icon = { faUpload } /> 
 
       <FontAwesomeIcon icon = { faHome } /> Home
     </Container>
