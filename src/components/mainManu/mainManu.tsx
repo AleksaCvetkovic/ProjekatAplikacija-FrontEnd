@@ -14,12 +14,34 @@ interface MainManuPropertis {
     items: MainManuItem[];
 }
 
+interface mainManuState{
+    items: MainManuItem[];
+}
+
 export class MainManu extends React.Component<MainManuPropertis>{
+    state: mainManuState;
+
+    constructor(props: Readonly<MainManuPropertis>){
+        super(props);
+
+        this.state = {
+            items: props.items,
+        };
+
+      
+    }
+
+    public setItem(items: MainManuItem[]){
+        this.setState({
+            items: items,
+        });
+    }
+
     render() {
         return (
             <Container>
             <Nav variant="tabs">
-                { this.props.items.map(this.makeNavLink)}
+                { this.state.items.map(this.makeNavLink)}
             </Nav>
             </Container>
         );
