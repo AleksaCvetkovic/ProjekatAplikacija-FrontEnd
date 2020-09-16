@@ -1,11 +1,16 @@
 import React from 'react';
 import './App.css';
+import {Card, Container} from 'react-bootstrap';
+import { faHome, faUpload } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function App() {
   return (
-    <div className="App">
-     Home
-    </div>
+    <Container>
+      <FontAwesomeIcon icon = { faUpload } /> 
+
+      <FontAwesomeIcon icon = { faHome } /> Home
+    </Container>
   );
 }
 
