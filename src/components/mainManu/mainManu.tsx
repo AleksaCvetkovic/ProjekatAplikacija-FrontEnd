@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Nav } from "react-bootstrap";
+import { HashRouter, Link } from "react-router-dom";
 export class MainManuItem{
     text: string = '';
     link: string = '#';
@@ -41,16 +42,19 @@ export class MainManu extends React.Component<MainManuPropertis>{
         return (
             <Container>
             <Nav variant="tabs">
+                <HashRouter>
                 { this.state.items.map(this.makeNavLink)}
+                </HashRouter>
             </Nav>
             </Container>
         );
     }
     private makeNavLink(item: MainManuItem){
         return (
-            <Nav.Link href ={ item.link }>
-                { item.text }
-                </Nav.Link>
+            <Link to={item.link} className='nav-link'>
+                { item.link }
+            </Link>
+            
         );
     }
 }
