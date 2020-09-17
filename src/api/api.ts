@@ -23,7 +23,7 @@ export default function api(
      .then(res => responseHendler( res,resolve ))
      .catch(async err => {
         if(err.response.status === 401){
-            const newToken = await refreshToken(requestData);
+            const newToken = await refreshToken();
 
             if(!newToken){
                 const response: ApiResponse = {
@@ -96,8 +96,7 @@ export function saveRefreshToken(token: string){
     localStorage.setItem('api_refresh_token', token);
 }
 
-async function refreshToken(
-    requestData: AxiosRequestConfig, 
+async function refreshToken( 
     ): Promise<string | null> {
         const path = 'auth/user/refresh';
         const data = {

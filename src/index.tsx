@@ -13,6 +13,7 @@ import {  HashRouter,  Route,  Switch} from 'react-router-dom';
 import { ContactPage } from './components/ContactPage/ContactPage';
 import { UserLogIn } from './components/UserLoginPage/UserLogIn';
 import CategoryPage from './components/CategoryPage/CategoryPage';
+import { UserRegistrationPage } from './components/userRegistrationPgage/UserRegistrationPage';
 
 
 
@@ -20,6 +21,7 @@ const manuItems = [
   new MainManuItem('Home', '/'),
   new MainManuItem('Contact', '/contact/'),
   new MainManuItem('Log In', '/user/logIn/'),
+  new MainManuItem('Register', '/user/register/'),
 
   new MainManuItem("Cat 1 ", "/category/1/"),
   new MainManuItem("Cat 5 ", "/category/5/"),
@@ -34,6 +36,7 @@ ReactDOM.render(
         <Route exact path='/' component = {HomePage}/>
         <Route  path='/contact' component = {ContactPage}/>
         <Route  path='/user/login' component = {UserLogIn}/>
+        <Route  path='/user/register' component = {UserRegistrationPage}/>
         <Route  path='/category/:cid' component = {CategoryPage}/>
         
       </Switch>
