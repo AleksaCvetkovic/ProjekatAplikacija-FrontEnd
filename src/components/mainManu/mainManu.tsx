@@ -6,8 +6,8 @@ export class MainManuItem{
     link: string = '#';
 
     constructor(text: string, link: string){
-        this.link = link;
         this.text = text;
+        this.link = link;
     }
 }
 
